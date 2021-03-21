@@ -1,0 +1,104 @@
+section {
+    margin: 0;
+    padding: 24px;
+
+    box-sizing: border-box;
+}
+
+#welcome {
+    height: calc(100vh - 65px);
+
+    display: grid;
+    grid-template-rows: 1fr auto auto auto 1fr auto;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 16px;
+
+    overflow: hidden;
+}
+
+#welcome h1, #welcome h2, #welcome a, #welcome #icon {
+    text-align: center;
+}
+
+#welcome img {
+    grid-row: 2;
+    grid-column: 3/7;
+    margin: auto;
+    height: 64px;
+    width: 64px;
+}
+
+#welcome h1 {
+    grid-row: 3;
+    grid-column: 3/7;
+
+    font-size: 52px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+
+    color: black;
+}
+
+#welcome h2 {
+    grid-row: 4;
+    grid-column: 3/7;
+    font-weight: 16px;
+    font-weight: normal;
+
+    color: black;
+}
+
+#welcome a {
+    grid-row: 6;
+    grid-column: 3/7;
+
+    font-size: 0;
+
+    text-decoration: none;
+
+    margin: auto;
+}
+
+#welcome a::before {
+    content: 'expand_more';
+
+    font-family: 'Material Icons';
+    font-size: 32px;
+
+    line-height: 64px;
+    width: 64px;
+
+    display: inline-block;
+
+    border: solid 2px #E0E0E0;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 719px) {
+    section {
+        padding: 16px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    #welcome {
+        grid-template-columns: 1fr;
+    }
+    
+    #welcome img {
+        grid-column: 1;
+    }
+
+    #welcome h1 {
+        grid-column: 1;
+    }
+    
+    #welcome h2 {
+        grid-column: 1;
+    }
+    
+    #welcome a {
+        grid-column: 1;
+    }
+}

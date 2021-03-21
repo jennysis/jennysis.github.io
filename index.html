@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <title>Jennysis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="icon" type="image/png" href="res/icon.png">
+    <script>
+        let main_menu = null;
+
+        window.onload = () => {
+            main_menu = document.getElementById("main-menu");
+            lang_menu = document.getElementById("lang-select");
+
+            document.getElementById("open-menu").onclick = () => {
+                if (main_menu.classList.contains("open"))
+                    main_menu.classList.remove("open");
+                else
+                    main_menu.classList.add("open");
+            }
+
+            document.getElementById("open-lang-select").onclick = () => {
+                if (lang_menu.classList.contains("open"))
+                    lang_menu.classList.remove("open");
+                else
+                    lang_menu.classList.add("open");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div id="open-menu" class="material-icons header-button">menu</div>
+        <a href="/" id="logo">Jennysis</a>
+        <nav id="main-menu">
+            <ul id="menu">
+                <li><a href="/docs">Documentation</a></li>
+                <li><a href="/project">The project</a></li>
+                <li><a href="/achievement">Achievements</a></li>
+            </ul>
+            <div id="lang-select">
+                English
+                <div class="material-icons header-button" id="open-lang-select">arrow_drop_down</div>
+                <ul>
+                    <li><a href="/fr">Français</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section id="welcome">
+        <img src="res/icon.svg">
+        <h1>The easiest way to create your web platform.</h1>
+        <h2>Web browser, web authoring system... easily create your own software usign web technologies with Jennysis</h2>
+        <a href="#features">Learn more</a>
+    </section>
+    <section id="featrues"></section>
+    <div id="grid">
+        <style>
+            #grid {
+                visibility: hidden;
+                display: grid;
+                background-color: red;
+                opacity: 0.1;
+                pointer-events: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                grid-template-rows: 100vh;
+
+                width: 100%;
+                height: 100%;
+                min-width: 320px;
+                box-sizing: border-box;
+
+                padding: 0 24px;
+                grid-template-columns: repeat(12, 1fr);
+                grid-gap: 16px;
+            }
+            .grid-item {
+                background-color: green;
+            }
+
+            @media screen and (max-width: 599px) {
+                #grid {
+                    padding: 0 16px;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+
+            @media screen and (min-width: 599px) and (max-width: 719px) {
+                #grid {
+                    padding: 0 16px;
+                    grid-template-columns: repeat(8, 1fr);
+                }
+            }
+
+            @media screen and (min-width: 719px) {
+                #grid {
+                    padding: 0 24px;
+                    grid-template-columns: repeat(8, 1fr);
+                }
+            }
+        </style>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>
+</body>
+</html>
