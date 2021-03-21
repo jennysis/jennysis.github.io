@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;  /* Preferred icon size */
+    font-size: 24px;
+    /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -13,30 +13,25 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-  
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-  
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-  
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
 
 html, body {
     min-height: 100%;
-
     background-color: #FAFAFA;
     color: #616161;
-
     font-family: 'Roboto', sans-serif;
-
     padding: 0;
     margin: 0;
-
+    scrollbar-color: #E0E0E0 #FAFAFA;
+    scrollbar-width: thin;
     /*overflow-x: hidden;*/
 }
 
@@ -51,20 +46,14 @@ a {
 
 header {
     height: 64px;
-
     border-bottom: solid 1px #E0E0E0;
     background-color: #FAFAFA;
-
     display: flex;
     flex-direction: row;
     align-items: stretch;
-
     padding: 0 16px;
-
     font-size: 20px;
-
     line-height: 48px;
-
     user-select: none;
 }
 
@@ -75,7 +64,6 @@ header #logo::before {
     height: 48px;
     float: left;
     margin-right: 8px;
-
     background-image: url(../res/icon.svg);
     background-position: center;
     background-size: 32px 32px;
@@ -118,41 +106,34 @@ header #main-menu ul li a {
 }
 
 #lang-select {
-    position: relative;
     line-height: 64px;
-    padding-left: 16px;
     cursor: pointer;
-    padding-right: 64px;
+    position: relative;
 }
 
 #lang-select #open-lang-select {
-    position: absolute;
-    top: 0;
-    right: 0;
     transform: rotate(0);
-
     transition: transform .2s ease;
+    padding: 0 16px;
 }
 
-.header-button {
-    line-height: 32px;
-    width: 32px;
-    margin: 16px 8px;
+#lang-select #open-lang-select::after {
+    content: 'arrow_drop_down';
+    font-family: 'Material Icons';
+    font-size: 24px;
+    float: right;
+    margin-right: -16px;
+    margin-left: 16px;
+    transform: rotate(0);
+    transition: transform .2s ease;
+    display: block;
+    width: 64px;
     text-align: center;
-    cursor: pointer;
-
-    border-radius: 50%;
-    background-color: #F5F5F500;
-    transition: background-color .2s ease;
-
-    position: relative;
-
-    z-index: 1;
 }
 
-.header-button:hover {
-    background-color: #F5F5F5FF;
-    transition: background-color .25s ease;
+#lang-select.open #open-lang-select::after {
+    transform: rotate(180deg);
+    transition: transform .25s ease;
 }
 
 #lang-select ul {
@@ -175,19 +156,26 @@ header #main-menu ul li a {
     transition: opacity .25s ease;
 }
 
-#lang-select #open-lang-select {
-    transform: rotate(0);
-
-    transition: transform .2s ease;
-}
-
-#lang-select.open #open-lang-select {
-    transform: rotate(180deg);
-    transition: transform .25s ease;
-}
-
 #lang-select ul li a {
     padding: 0 16px;
+}
+
+.header-button {
+    line-height: 32px;
+    width: 32px;
+    margin: 16px 8px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #F5F5F500;
+    transition: background-color .2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.header-button:hover {
+    background-color: #F5F5F5FF;
+    transition: background-color .25s ease;
 }
 
 #open-menu {
@@ -198,16 +186,13 @@ header #main-menu ul li a {
     header #logo::before {
         display: none;
     }
-
     #open-menu {
         display: block;
     }
-
     header {
         position: sticky;
         top: 0;
     }
-
     #main-menu {
         position: absolute;
         margin: 0 !important;
@@ -219,55 +204,44 @@ header #main-menu ul li a {
         flex-direction: column !important;
         box-sizing: content-box;
         border-right: solid 1px #E0E0E0;
-
         transition: left .2s ease;
     }
-
     #main-menu.open {
         left: 0;
-
         transition: left .25s ease;
     }
-
     #main-menu ul {
         flex-direction: column !important;
     }
-
     #main-menu ul a {
         padding: 0 24px;
         height: 48px !important;
         line-height: 48px !important;
     }
-
     #lang-select {
         border-top: solid 1px #E0E0E0;
         line-height: 48px;
         max-height: 48px;
         overflow: hidden;
-        padding: 0 24px;
-
         transition: max-height .2s ease;
     }
-
     #lang-select.open {
         max-height: 192px;
-
         transition: max-height .25s ease;
     }
-
     #lang-select #open-lang-select {
-        right: 16px;
-        margin: 8px;
+        padding: 0 24px;
+    }
+    #lang-select #open-lang-select::after {
+        line-height: 48px;
+        margin: 0;
         transform: rotate(-180deg);
-
         transition: transform .2s ease;
     }
-
-    #lang-select.open #open-lang-select {
+    #lang-select.open #open-lang-select::after {
         transform: rotate(0);
         transition: transform .25s ease;
     }
-
     #lang-select ul {
         position: static;
         border: none;
@@ -275,22 +249,22 @@ header #main-menu ul li a {
         max-height: 144px;
         opacity: 1;
     }
+    #lang-select ul a {
+        padding: 0 48px !important;
+    }
 }
 
 @media screen and (max-width: 719px) {
     header {
         padding: 0 8px;
     }
-
     #main-menu ul a {
         padding: 0 16px;
     }
-    
-    #lang-select {
+    #lang-select #open-lang-select {
         padding: 0 16px;
     }
-
-    #lang-select #open-lang-select {
-        right: 8px;
+    #lang-select ul a {
+        padding: 0 32px !important;
     }
 }

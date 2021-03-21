@@ -6,7 +6,7 @@ section {
 }
 
 #welcome {
-    height: calc(100vh - 65px);
+    min-height: calc(100vh - 65px);
 
     display: grid;
     grid-template-rows: 1fr auto auto auto 1fr auto;
@@ -71,7 +71,7 @@ section {
 
     display: inline-block;
 
-    border: solid 2px #E0E0E0;
+    border: solid 1px #E0E0E0;
     border-radius: 50%;
 }
 
