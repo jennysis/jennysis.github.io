@@ -234,6 +234,7 @@ header #main-menu ul li a {
     }
     #lang-select #open-lang-select::after {
         line-height: 48px;
+        width: 48px;
         margin: 0;
         transform: rotate(-180deg);
         transition: transform .2s ease;
