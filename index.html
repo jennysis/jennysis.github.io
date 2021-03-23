@@ -92,5 +92,67 @@
             <li><a href="/sitemap.html">Sitemap</a></li>
         </ul>
     </footer>
+
+    <div id="grid">
+        <style>
+            #grid {
+                visibility: hidden;
+                display: grid;
+                background-color: red;
+                opacity: 0.1;
+                pointer-events: none;
+                position: fixed;
+                left: 0;
+                top: 0;
+                grid-template-rows: 100vh;
+    
+                width: 100%;
+                height: 100%;
+                min-width: 320px;
+                box-sizing: border-box;
+    
+                padding: 0 24px;
+                grid-template-columns: repeat(12, 1fr);
+                grid-gap: 16px;
+            }
+    
+            .grid-item {
+                background-color: green;
+            }
+    
+            @media screen and (max-width: 599px) {
+                #grid {
+                    padding: 0 16px;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+    
+            @media screen and (min-width: 599px) and (max-width: 719px) {
+                #grid {
+                    padding: 0 16px;
+                    grid-template-columns: repeat(8, 1fr);
+                }
+            }
+    
+            @media screen and (min-width: 719px) {
+                #grid {
+                    padding: 0 24px;
+                    grid-template-columns: repeat(8, 1fr);
+                }
+            }
+        </style>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>
 </body>
 </html>

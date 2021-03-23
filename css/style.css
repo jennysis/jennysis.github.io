@@ -308,10 +308,16 @@ footer ul li a {
     #lang-select ul a {
         padding: 0 48px !important;
     }
+    footer, footer ul {
+        flex-direction: column;
+    }
+    footer ul {
+        line-height: 32px;
+    }
 }
 
 @media screen and (max-width: 719px) {
-    header {
+    header, footer {
         padding: 0 8px;
     }
     #main-menu ul a {
@@ -322,5 +328,35 @@ footer ul li a {
     }
     #lang-select ul a {
         padding: 0 32px !important;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    html, body {
+        background-color: #212121;
+        color: #FAFAFA;
+        scrollbar-color: #424242 #212121;
+    }
+    header {
+        border-color: #424242;
+        background-color: #212121;
+    }
+    #main-menu, #lang-select {
+        background-color: #212121 !important;
+        border-color: #424242 !important;
+    }
+    #lang-select ul {
+        background-color: #212121;
+        border-color: #424242 !important;
+    }
+    .header-button {
+        background-color: #42424200;
+    }
+    .header-button:hover {
+        background-color: #424242;
+    }
+    footer {
+        border-top-color: #424242;
+        background-color: #212121;
     }
 }

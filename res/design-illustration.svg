@@ -3,11 +3,23 @@
 	<defs>
 		<style>
 			path, rect, circle {
-			   vector-effect: non-scaling-stroke;
-            fill:#FAFAFA;
-            stroke:#1a237e;
-            stroke-linecap:round;
-            stroke-width:1;
+				vector-effect: non-scaling-stroke;
+				fill:#FAFAFA;
+				stroke:#1a237e;
+				stroke-linecap:round;
+				stroke-width:1;
+			}
+			#light {
+				stroke:#7986cb;
+			}
+			@media screen and (prefers-color-scheme: dark) {
+				path, rect, circle {
+					fill:#212121;
+					stroke:#9fa8da;
+				}
+				#light {
+					stroke:#5c6bc0;
+				}
 			}
 		</style>
 		<clipPath clipPathUnits="userSpaceOnUse" id="cp">
@@ -25,11 +37,11 @@
       <path style="fill:none;" d="M 232,44 H 8 M 8,26 h 4 c 2.20914,0 4,-1.790861 4,-4 v -6 c 0,-2.209139 1.79086,-4 4,-4 h 56 c 2.209139,0 4,1.790861 4,4 v 6 0 c 0,2.209139 1.790861,4 4,4 h 148" />
 		<rect style="fill:none;" width="224" height="224" x="8" y="8" ry="4" />
 		<g id="g897" transform="translate(8,16)">
-			<rect style="stroke:#7986cb;stroke-dasharray:1.00157, 3.00471999999999984;stroke-dashoffset:0.600945;" width="32" height="32" x="184" y="168" />
-			<rect style="stroke:#7986cb;" width="4" height="4" x="180" y="164" />
-			<rect style="stroke:#7986cb;" width="4" height="4" x="216" y="164" />
-			<rect style="stroke:#7986cb;" width="4" height="4" x="216" y="200" />
-			<rect style="stroke:#7986cb;" width="4" height="4" x="180" y="200" />
+			<rect id="light" style="stroke-dasharray:1.00157, 3.00471999999999984;stroke-dashoffset:0.600945;" width="32" height="32" x="184" y="168" />
+			<rect id="light" width="4" height="4" x="180" y="164" />
+			<rect id="light" width="4" height="4" x="216" y="164" />
+			<rect id="light" width="4" height="4" x="216" y="200" />
+			<rect id="light" width="4" height="4" x="180" y="200" />
 			<circle cx="200" cy="184" r="16" />
 		</g>
 		<path d="m 226,218 v 24 l 5.49805,-5.49805 4.90039,11.82813 c 0.42284,1.02043 1.59285,1.50487 2.61328,1.08203 1.02043,-0.42284 1.50487,-1.59285 1.08203,-2.61328 l -4.90039,-11.82813 h 7.77734 z" />

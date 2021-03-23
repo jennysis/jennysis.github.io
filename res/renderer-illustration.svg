@@ -4,10 +4,16 @@
 		<style>
 			path, rect, circle {
 			vector-effect: non-scaling-stroke;
-			fill:#FAFAFA;
-			stroke:#33691e;
-			stroke-linecap:round;
-			stroke-width:1;
+				fill:#FAFAFA;
+				stroke:#33691e;
+				stroke-linecap:round;
+				stroke-width:1;
+			}
+			@media screen and (prefers-color-scheme: dark) {
+				path, rect, circle {
+					fill:#212121;
+					stroke:#c5e1a5;
+				}
 			}
 		</style>
 		<clipPath clipPathUnits="userSpaceOnUse" id="cp">

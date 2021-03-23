@@ -118,7 +118,6 @@ section p {
     text-decoration: none;
     color: #1a237e;
     font-weight: normal;
-
     transition: color .2s ease;
 }
 
@@ -130,19 +129,16 @@ section p {
     width: 64px;
     margin-left: 32px;
     display: block;
-
     transition: margin-left .2s ease;
 }
 
 .features div a:hover {
     color: #303f9f;
-
     transition: color .25s ease;
 }
 
 .features div a:hover::after {
     margin-left: 48px;
-
     transition: margin-left .25s ease;
 }
 
@@ -162,5 +158,20 @@ section p {
     .features {
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    section h1, section p {
+        color: white;
+    }
+    #welcome a::before, .features {
+        border-color: #424242;
+    }
+    .features div a {
+        color: #7986cb;
+    }
+    .features div a:hover {
+        color: #9fa8daff;
     }
 }
