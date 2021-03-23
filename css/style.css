@@ -64,7 +64,7 @@ header #logo::before {
     height: 48px;
     float: left;
     margin-right: 8px;
-    background-image: url(../res/icon.svg);
+    background-image: url(/res/icon.svg);
     background-position: center;
     background-size: 32px 32px;
     background-repeat: no-repeat;
@@ -180,6 +180,61 @@ header #main-menu ul li a {
 
 #open-menu {
     display: none;
+}
+
+footer {
+    height: 64px;
+    border-top: solid 1px #E0E0E0;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0 16px;
+    font-size: 20px;
+    line-height: 48px;
+    user-select: none;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer div {
+    flex: 1;
+    padding: 8px;
+}
+
+footer div::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+    float: left;
+    background: url(/res/sielo.svg) no-repeat center;
+}
+
+footer div a:hover {
+    text-decoration: underline;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+footer ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer ul li a {
+    padding: 8px;
+    display: block;
 }
 
 @media screen and (max-width: 839px) {
